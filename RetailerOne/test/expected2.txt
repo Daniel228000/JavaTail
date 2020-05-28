@@ -1,0 +1,8 @@
+input1.txt
+How
+
+Where
+input2.txt
+Walking the wire
+Ferrari
+Monster
