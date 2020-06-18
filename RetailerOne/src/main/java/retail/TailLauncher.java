@@ -19,6 +19,8 @@ public class TailLauncher {
 
     @Argument(metaVar = "InputName", usage = "input file name")
     private ArrayList<String> inputFileNames;
+    private int count;
+    private boolean flag;
 
 
     public static void main(String[] args) {
@@ -35,17 +37,31 @@ public class TailLauncher {
             System.err.println("error! java -jar Tail.jar -o OutputName " +
                     "[-c Chars || -n Strings] InputName1 InputName2 ...");
             parser.printUsage(System.err);
-            return;
+            System.exit(99);
         }
 
         if (countOfChars != 0 && countOfStrings != 0) {
-            throw new Error("Choose one of available variants");
+            System.exit(999);
         }
-        Tail tail = new Tail(countOfChars, countOfStrings);
+
+        if (countOfChars != 0) {
+            count = countOfChars;
+            flag = true;
+        } else
+        if (countOfStrings != 0) {
+            count = countOfStrings;
+            flag = false;
+        }
+        else {
+            count = 10;
+            flag = false;
+        }
+        Tail tail = new Tail(count, flag);
         try {
             tail.main(inputFileNames, outputFileName);
         } catch (IOException e) {
             System.err.println(e.getMessage());
+            System.exit(9999);
         }
     }
 }

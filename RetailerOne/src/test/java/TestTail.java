@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 
 public class TestTail {
@@ -28,48 +27,42 @@ public class TestTail {
     @Test
     public void test1() throws IOException {
         TailLauncher.main(args1);
-        assertEquals(Files.readAllLines(Paths.get("test\\output.txt")),
-                Files.readAllLines(Paths.get("test\\expected1.txt")));
+        assertEquals(Files.readAllLines(Paths.get("test\\expected1.txt")),
+                Files.readAllLines(Paths.get("test\\output.txt")));
     }
 
 
     @Test
     public void test2() throws IOException {
         TailLauncher.main(args2);
-        assertEquals(Files.readAllLines(Paths.get("test\\output.txt")),
-                Files.readAllLines(Paths.get("test\\expected2.txt")));
+        assertEquals(Files.readAllLines(Paths.get("test\\expected2.txt")),
+                Files.readAllLines(Paths.get("test\\output.txt")));
     }
 
     @Test
     public void test3() throws IOException {
         TailLauncher.main(args3);
-        assertEquals(Files.readAllLines(Paths.get("test\\output.txt")),
-                Files.readAllLines(Paths.get("test\\expected3.txt")));
+        assertEquals(Files.readAllLines(Paths.get("test\\expected3.txt")),
+                Files.readAllLines(Paths.get("test\\output.txt")));
     }
 
     @Test
     public void test4() throws IOException {
         TailLauncher.main(args4);
-        assertEquals(Files.readAllLines(Paths.get("test\\output.txt")),
-                Files.readAllLines(Paths.get("test\\expected4.txt")));
+        assertEquals(Files.readAllLines(Paths.get("test\\expected4.txt")),
+                Files.readAllLines(Paths.get("test\\output.txt")));
     }
 
     @Test
     public void test5() throws IOException {
         TailLauncher.main(args5);
-        assertEquals(Files.readAllLines(Paths.get("test\\output.txt")),
-                Files.readAllLines(Paths.get("test\\expected5.txt")));
+        assertEquals(Files.readAllLines(Paths.get("test\\expected5.txt")),
+                Files.readAllLines(Paths.get("test\\output.txt")));
     }
 
-    @Test
-    public void testErrorOne () {
-        assertThrows(Error.class, () -> TailLauncher.main(args6));
-    }
-
-    // @Test
-    // public void testErrorTwo () {
-    //     assertThrows(Error.class, () -> TailLauncher.main(args7));
-    // }
-
-
+   //@Test
+   //public void test6() throws IOException {
+   //    TailLauncher.main(args6);
+   //    assertEquals(System.exit(999), () -> TailLauncher.main(args6));
+   //}
 }

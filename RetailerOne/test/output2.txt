@@ -1,0 +1,10 @@
+input1.txt
+tratata
+bubububu
+kill4me
+
+input2.txt
+Walking the wire
+Ferrari
+Monster
+
